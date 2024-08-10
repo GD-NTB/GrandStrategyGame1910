@@ -1,0 +1,14 @@
+[
+  {
+    "Tag": "BRITAIN",
+    "Name": "United Kingdom",
+    "LongName": "United Kingdom of Great Britain and Ireland",
+    "Colour": "#FF3F3F"
+  },
+  {
+    "Tag": "FRANCE",
+    "Name": "France",
+    "LongName": "French Republic",
+    "Colour": "#3F3FFF"
+  }
+]

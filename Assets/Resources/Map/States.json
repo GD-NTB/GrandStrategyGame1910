@@ -1,0 +1,835 @@
+[
+  {
+    "Name": "Kent",
+    "StatesMapColour": "#F8F9FA"
+  },
+  {
+    "Name": "Sussex",
+    "StatesMapColour": "#B8A6AF"
+  },
+  {
+    "Name": "Surrey",
+    "StatesMapColour": "#DDD7E1"
+  },
+  {
+    "Name": "Hampshire",
+    "StatesMapColour": "#080803"
+  },
+  {
+    "Name": "Dorset",
+    "StatesMapColour": "#798BC0"
+  },
+  {
+    "Name": "Somerset",
+    "StatesMapColour": "#D2E4E8"
+  },
+  {
+    "Name": "Devon",
+    "StatesMapColour": "#F4EEC4"
+  },
+  {
+    "Name": "Cornwall",
+    "StatesMapColour": "#FEF4F8"
+  },
+  {
+    "Name": "Kilkenny",
+    "StatesMapColour": "#973A2F"
+  },
+  {
+    "Name": "Wiltshire",
+    "StatesMapColour": "#C0BDFE"
+  },
+  {
+    "Name": "Berkshire",
+    "StatesMapColour": "#2D6B3F"
+  },
+  {
+    "Name": "County of London",
+    "StatesMapColour": "#A78F84"
+  },
+  {
+      "StatesMapColour": "#C0C3BB"
+  },
+  {
+    "Name": "Essex",
+    "StatesMapColour": "#B7C6A1"
+  },
+  {
+    "Name": "Hertfordshire",
+    "StatesMapColour": "#3B272F"
+  },
+  {
+    "Name": "Buckinghamshire",
+    "StatesMapColour": "#4E0179"
+  },
+  {
+    "Name": "Oxfordshire",
+    "StatesMapColour": "#AD926D"
+  },
+  {
+    "Name": "Gloucestershire",
+    "StatesMapColour": "#1D1D1E"
+  },
+  {
+    "Name": "Herefordshire",
+    "StatesMapColour": "#DACDB6"
+  },
+  {
+    "Name": "Shropshire",
+    "StatesMapColour": "#F4DBE4"
+  },
+  {
+    "Name": "Worcestershire",
+    "StatesMapColour": "#4147A8"
+  },
+  {
+    "Name": "Warwickshire",
+    "StatesMapColour": "#342065"
+  },
+  {
+    "Name": "Northamptonshire",
+    "StatesMapColour": "#5D6276"
+  },
+  {
+    "Name": "Bedfordshire",
+    "StatesMapColour": "#3E5D5B"
+  },
+  {
+    "Name": "Huntingdonshire",
+    "StatesMapColour": "#B4F6FC"
+  },
+  {
+      "StatesMapColour": "#694C49"
+  },
+  {
+    "Name": "Norfolk",
+    "StatesMapColour": "#97BAAE"
+  },
+  {
+    "Name": "Suffolk",
+    "StatesMapColour": "#4993FD"
+  },
+  {
+    "Name": "Lincolnshire",
+    "StatesMapColour": "#A0928E"
+  },
+  {
+    "Name": "Yorkshire",
+    "StatesMapColour": "#429B6A"
+  },
+  {
+    "Name": "Rutland",
+    "StatesMapColour": "#E2ACEC"
+  },
+  {
+    "Name": "Leicestershire",
+    "StatesMapColour": "#DBB486"
+  },
+  {
+    "Name": "Nottinghamshire",
+    "StatesMapColour": "#F4DFE5"
+  },
+  {
+    "Name": "Derbyshire",
+    "StatesMapColour": "#969BA8"
+  },
+  {
+    "Name": "Staffordshire",
+    "StatesMapColour": "#2D6439"
+  },
+  {
+    "Name": "Chesire",
+    "StatesMapColour": "#463E74"
+  },
+  {
+    "Name": "Lancashire",
+    "StatesMapColour": "#FECAB8"
+  },
+  {
+    "Name": "Westmorland",
+    "StatesMapColour": "#CED2C9"
+  },
+  {
+    "Name": "Cumberland",
+    "StatesMapColour": "#ED756B"
+  },
+  {
+    "Name": "Durham",
+    "StatesMapColour": "#2F4211"
+  },
+  {
+    "Name": "Northumberland",
+    "StatesMapColour": "#ABACD6"
+  },
+  {
+    "Name": "Flintshire",
+    "StatesMapColour": "#DEE6D3"
+  },
+  {
+    "Name": "Denbighshire",
+    "StatesMapColour": "#4992A5"
+  },
+  {
+    "Name": "Caernarfonshire",
+    "StatesMapColour": "#9B9B9C"
+  },
+  {
+    "Name": "Merioneth",
+    "StatesMapColour": "#A6DEF5"
+  },
+  {
+    "Name": "Cardiganshire",
+    "StatesMapColour": "#746448"
+  },
+  {
+    "Name": "Pembrokeshire",
+    "StatesMapColour": "#FAE7E2"
+  },
+  {
+    "Name": "Carmarthenshire",
+    "StatesMapColour": "#191403"
+  },
+  {
+    "Name": "Brecknockshire",
+    "StatesMapColour": "#3C3D40"
+  },
+  {
+    "Name": "Radnorshire",
+    "StatesMapColour": "#3E7ED8"
+  },
+  {
+    "Name": "Montgomeryshire",
+    "StatesMapColour": "#3A313F"
+  },
+  {
+    "Name": "Anglesey",
+    "StatesMapColour": "#181319"
+  },
+  {
+    "Name": "Mann",
+    "StatesMapColour": "#AFAE9D"
+  },
+  {
+    "Name": "Dumfriesshire",
+    "StatesMapColour": "#979E34"
+  },
+  {
+    "Name": "Roxburghshire",
+    "StatesMapColour": "#DBE3A3"
+  },
+  {
+    "Name": "Berwickshire",
+    "StatesMapColour": "#788FA6"
+  },
+  {
+    "Name": "Kirkcudbrightshire",
+    "StatesMapColour": "#906C63"
+  },
+  {
+    "Name": "Wigtownshire",
+    "StatesMapColour": "#635B7E"
+  },
+  {
+    "Name": "Ayrshire",
+    "StatesMapColour": "#3E4835"
+  },
+  {
+    "Name": "Lanarkshire",
+    "StatesMapColour": "#76312E"
+  },
+  {
+    "Name": "Rebleshire",
+    "StatesMapColour": "#FCA9C3"
+  },
+  {
+    "Name": "Selkirkshire",
+    "StatesMapColour": "#6A786F"
+  },
+  {
+    "Name": "East Lothian",
+    "StatesMapColour": "#442F4B"
+  },
+  {
+      "StatesMapColour": "#402C18"
+  },
+  {
+    "Name": "Renfrewshire",
+    "StatesMapColour": "#5C727A"
+  },
+  {
+    "Name": "Dunbarton",
+    "StatesMapColour": "#A7AEA8"
+  },
+  {
+    "Name": "West Lothian",
+    "StatesMapColour": "#65B269"
+  },
+  {
+    "Name": "Stirlingshire",
+    "StatesMapColour": "#AEDF86"
+  },
+  {
+    "Name": "Clackmannanshire",
+    "StatesMapColour": "#CBBDC0"
+  },
+  {
+    "Name": "Kinross-shire",
+    "StatesMapColour": "#752C7B"
+  },
+  {
+    "Name": "Fife",
+    "StatesMapColour": "#E09A86"
+  },
+  {
+    "Name": "Buteshire",
+    "StatesMapColour": "#943F2C"
+  },
+  {
+    "Name": "Argyllshire",
+    "StatesMapColour": "#94758A"
+  },
+  {
+    "Name": "Perthshire",
+    "StatesMapColour": "#19EED8"
+  },
+  {
+    "Name": "Angus",
+    "StatesMapColour": "#D1C78C"
+  },
+  {
+    "Name": "Kincardineshire",
+    "StatesMapColour": "#EEC1C1"
+  },
+  {
+    "Name": "Banffshire",
+    "StatesMapColour": "#DCE9EA"
+  },
+  {
+    "Name": "Banffshire",
+    "StatesMapColour": "#555254"
+  },
+  {
+    "Name": "Morayshire",
+    "StatesMapColour": "#343184"
+  },
+  {
+    "Name": "Iverness-shire",
+    "StatesMapColour": "#326E80"
+  },
+  {
+    "Name": "Ross-shire and Cromartyshire",
+    "StatesMapColour": "#449D7F"
+  },
+  {
+    "Name": "Sutherland",
+    "StatesMapColour": "#B6E7F8"
+  },
+  {
+    "Name": "Caithness",
+    "StatesMapColour": "#30BBDE"
+  },
+  {
+    "Name": "Orkney",
+    "StatesMapColour": "#1C1B18"
+  },
+  {
+    "Name": "Shetland",
+    "StatesMapColour": "#75C2B2"
+  },
+  {
+    "Name": "Donegal",
+    "StatesMapColour": "#03342F"
+  },
+  {
+    "Name": "Londonderry",
+    "StatesMapColour": "#B9B1B2"
+  },
+  {
+    "Name": "Antrim",
+    "StatesMapColour": "#E8EFF9"
+  },
+  {
+    "Name": "Down",
+    "StatesMapColour": "#C7C5C0"
+  },
+  {
+    "Name": "Tyrone",
+    "StatesMapColour": "#413E3D"
+  },
+  {
+    "Name": "Armagh",
+    "StatesMapColour": "#557336"
+  },
+  {
+    "Name": "Fermanagh",
+    "StatesMapColour": "#F0521F"
+  },
+  {
+    "Name": "Monaghan",
+    "StatesMapColour": "#1F2F34"
+  },
+  {
+    "Name": "Louth",
+    "StatesMapColour": "#DCC36D"
+  },
+  {
+    "Name": "Nairnshire",
+    "StatesMapColour": "#1F3530"
+  },
+  {
+    "Name": "Leitrim",
+    "StatesMapColour": "#768646"
+  },
+  {
+    "Name": "Cavan",
+    "StatesMapColour": "#605351"
+  },
+  {
+    "Name": "Meath",
+    "StatesMapColour": "#403910"
+  },
+  {
+    "Name": "Dublin",
+    "StatesMapColour": "#37112C"
+  },
+  {
+    "Name": "Wicklow",
+    "StatesMapColour": "#4B36AB"
+  },
+  {
+    "Name": "Wexford",
+    "StatesMapColour": "#F6F1D6"
+  },
+  {
+    "Name": "Carlow",
+    "StatesMapColour": "#DBC93B"
+  },
+  {
+    "Name": "Kildare",
+    "StatesMapColour": "#023B5C"
+  },
+  {
+    "Name": "Sligo",
+    "StatesMapColour": "#2E4597"
+  },
+  {
+    "Name": "Mayo",
+    "StatesMapColour": "#4D3E2C"
+  },
+  {
+    "Name": "Claire",
+    "StatesMapColour": "#231B17"
+  },
+  {
+    "Name": "Kerry",
+    "StatesMapColour": "#05102D"
+  },
+  {
+    "Name": "Limerick",
+    "StatesMapColour": "#A9B7CC"
+  },
+  {
+    "Name": "Cork",
+    "StatesMapColour": "#7C8358"
+  },
+  {
+    "Name": "North Tipperary",
+    "StatesMapColour": "#42AE74"
+  },
+  {
+    "Name": "South Tipperary",
+    "StatesMapColour": "#999E9A"
+  },
+  {
+    "Name": "Glamorgan",
+    "StatesMapColour": "#832344"
+  },
+  {
+    "Name": "Monmouthshire",
+    "StatesMapColour": "#C296B5"
+  },
+  {
+    "Name": "Galway",
+    "StatesMapColour": "#C833C1"
+  },
+  {
+    "Name": "Roscommon",
+    "StatesMapColour": "#241809"
+  },
+  {
+    "Name": "Longford",
+    "StatesMapColour": "#93FDE0"
+  },
+  {
+    "Name": "West Meath",
+    "StatesMapColour": "#7DB394"
+  },
+  {
+    "Name": "Waterford",
+    "StatesMapColour": "#84B4BB"
+  },
+  {
+    "Name": "King's County",
+    "StatesMapColour": "#513F27"
+  },
+  {
+    "Name": "Queen's County",
+    "StatesMapColour": "#440B6B"
+  },
+  {
+    "Name": "Isles of Scilly",
+    "StatesMapColour": "#A09321"
+  },
+  {
+    "Name": "Channel Islands",
+    "StatesMapColour": "#A8A581"
+  },
+  {
+    "Name": "Finistère",
+    "StatesMapColour": "#140B0D"
+  },
+  {
+    "Name": "Côtes du Nord",
+    "StatesMapColour": "#494A4A"
+  },
+  {
+    "Name": "Morbihan",
+    "StatesMapColour": "#939EBC"
+  },
+  {
+    "Name": "Manche",
+    "StatesMapColour": "#EFD8FA"
+  },
+  {
+    "Name": "Ille-et-Vilaine",
+    "StatesMapColour": "#A97D96"
+  },
+  {
+    "Name": "Mayenne",
+    "StatesMapColour": "#3F471E"
+  },
+  {
+    "Name": "Calvados",
+    "StatesMapColour": "#332A1F"
+  },
+  {
+    "Name": "Orne",
+    "StatesMapColour": "#BEDFE5"
+  },
+  {
+    "Name": "Seine Inférieure",
+    "StatesMapColour": "#D5E0CE"
+  },
+  {
+    "Name": "Somme",
+    "StatesMapColour": "#3D3D41"
+  },
+  {
+    "Name": "Pas de Calais",
+    "StatesMapColour": "#FAE6E3"
+  },
+  {
+    "Name": "Nord",
+    "StatesMapColour": "#46A763"
+  },
+  {
+    "Name": "Eure",
+    "StatesMapColour": "#1B2627"
+  },
+  {
+    "Name": "Aisne",
+    "StatesMapColour": "#926DC3"
+  },
+  {
+    "Name": "Ardennes",
+    "StatesMapColour": "#33082A"
+  },
+  {
+    "Name": "Meuse",
+    "StatesMapColour": "#DCF6BF"
+  },
+  {
+    "Name": "Meurthe et Moselle",
+    "StatesMapColour": "#FAF8F7"
+  },
+  {
+    "Name": "Vosges",
+    "StatesMapColour": "#DDD5BF"
+  },
+  {
+    "Name": "Seine et Oise",
+    "StatesMapColour": "#534960"
+  },
+  {
+    "Name": "Paris",
+    "StatesMapColour": "#3C4F4B"
+  },
+  {
+    "Name": "Oise",
+    "StatesMapColour": "#BFD5DE"
+  },
+  {
+    "Name": "Marne",
+    "StatesMapColour": "#455C6C"
+  },
+  {
+    "Name": "Eure-et-Loir",
+    "StatesMapColour": "#369748"
+  },
+  {
+    "Name": "Seine-et-Marne",
+    "StatesMapColour": "#829C4C"
+  },
+  {
+    "Name": "Doubs",
+    "StatesMapColour": "#07141F"
+  },
+  {
+    "Name": "Belfort",
+    "StatesMapColour": "#E0DEDE"
+  },
+  {
+    "Name": "Haute-Saône",
+    "StatesMapColour": "#214296"
+  },
+  {
+    "Name": "Haute-Marne",
+    "StatesMapColour": "#4F4D4A"
+  },
+  {
+    "Name": "Jura",
+    "StatesMapColour": "#7789B7"
+  },
+  {
+    "Name": "Ain",
+    "StatesMapColour": "#66645C"
+  },
+  {
+    "Name": "Haute Savoie",
+    "StatesMapColour": "#C8A398"
+  },
+  {
+    "Name": "Savoie",
+    "StatesMapColour": "#131104"
+  },
+  {
+    "Name": "Aube",
+    "StatesMapColour": "#E19356"
+  },
+  {
+    "Name": "Vendée",
+    "StatesMapColour": "#8F756C"
+  },
+  {
+    "Name": "Yonne",
+    "StatesMapColour": "#D8FFCD"
+  },
+  {
+    "Name": "Loiret",
+    "StatesMapColour": "#62421C"
+  },
+  {
+    "Name": "Loir-et-Cher",
+    "StatesMapColour": "#CE2253"
+  },
+  {
+    "Name": "Sarthe",
+    "StatesMapColour": "#F9FAFF"
+  },
+  {
+    "Name": "Maine-et-Loire",
+    "StatesMapColour": "#554F3B"
+  },
+  {
+    "Name": "Loire-Inférieure",
+    "StatesMapColour": "#9A4A5E"
+  },
+  {
+    "Name": "Côte-d'Or",
+    "StatesMapColour": "#46211B"
+  },
+  {
+    "Name": "Nièvre",
+    "StatesMapColour": "#27263B"
+  },
+  {
+    "Name": "Saône-et-Loire",
+    "StatesMapColour": "#353A66"
+  },
+  {
+    "Name": "Cher",
+    "StatesMapColour": "#FC79A2"
+  },
+  {
+    "Name": "Indre",
+    "StatesMapColour": "#6E4E77"
+  },
+  {
+    "Name": "Indre-et-Loire",
+    "StatesMapColour": "#6689CA"
+  },
+  {
+    "Name": "Vienne",
+    "StatesMapColour": "#596763"
+  },
+  {
+    "Name": "Deux-Sèvres",
+    "StatesMapColour": "#711011"
+  },
+  {
+    "Name": "Charente-Inférieure",
+    "StatesMapColour": "#ECE5E3"
+  },
+  {
+    "Name": "Hautes-Alpes",
+    "StatesMapColour": "#E0E8E5"
+  },
+  {
+    "Name": "Isère",
+    "StatesMapColour": "#515DAA"
+  },
+  {
+    "Name": "Basses Alpes",
+    "StatesMapColour": "#8FA1A8"
+  },
+  {
+    "Name": "Alpes-Maritimes",
+    "StatesMapColour": "#9DA480"
+  },
+  {
+    "Name": "Var",
+    "StatesMapColour": "#ECF0F2"
+  },
+  {
+    "Name": "Corse",
+    "StatesMapColour": "#6B758C"
+  },
+  {
+    "Name": "Gironde",
+    "StatesMapColour": "#040A03"
+  },
+  {
+    "Name": "Lot-et-Garonne",
+    "StatesMapColour": "#676872"
+  },
+  {
+    "Name": "Landes",
+    "StatesMapColour": "#C7A96F"
+  },
+  {
+    "Name": "Basses Pyrénées",
+    "StatesMapColour": "#381E0E"
+  },
+  {
+    "Name": "Charent",
+    "StatesMapColour": "#D1B589"
+  },
+  {
+    "Name": "Dordogne",
+    "StatesMapColour": "#868CA3"
+  },
+  {
+    "Name": "Gers",
+    "StatesMapColour": "#8B864C"
+  },
+  {
+    "Name": "Hautes-Pyrénées",
+    "StatesMapColour": "#7D506A"
+  },
+  {
+    "Name": "Haute-Garonne",
+    "StatesMapColour": "#54B053"
+  },
+  {
+    "Name": "Ariège",
+    "StatesMapColour": "#201702"
+  },
+  {
+    "Name": "Haute-Vienne",
+    "StatesMapColour": "#733F38"
+  },
+  {
+    "Name": "Tarn-et-Garonne",
+    "StatesMapColour": "#508E7B"
+  },
+  {
+    "Name": "Pyrénées-Orientales",
+    "StatesMapColour": "#522D79"
+  },
+  {
+    "Name": "Aude",
+    "StatesMapColour": "#8F75F3"
+  },
+  {
+    "Name": "Hérault",
+    "StatesMapColour": "#97918A"
+  },
+  {
+    "Name": "Gard",
+    "StatesMapColour": "#9098BE"
+  },
+  {
+    "Name": "Bouches-du-Rhône",
+    "StatesMapColour": "#C3CCF9"
+  },
+  {
+    "Name": "Vaucluse",
+    "StatesMapColour": "#213C3F"
+  },
+  {
+    "Name": "Drôme",
+    "StatesMapColour": "#9F8668"
+  },
+  {
+    "Name": "Ardèche",
+    "StatesMapColour": "#EFE7F7"
+  },
+  {
+    "Name": "Rhône",
+    "StatesMapColour": "#F8FCF9"
+  },
+  {
+    "Name": "Loire",
+    "StatesMapColour": "#8ED38B"
+  },
+  {
+    "Name": "Lot",
+    "StatesMapColour": "#05120C"
+  },
+  {
+    "Name": "Corrèze",
+    "StatesMapColour": "#FAF4F0"
+  },
+  {
+    "Name": "Cantal",
+    "StatesMapColour": "#838798"
+  },
+  {
+    "Name": "Creuse",
+    "StatesMapColour": "#231113"
+  },
+  {
+    "Name": "Allier",
+    "StatesMapColour": "#321837"
+  },
+  {
+    "Name": "Puy de Dôme",
+    "StatesMapColour": "#0D0801"
+  },
+  {
+    "Name": "Haute-Loire",
+    "StatesMapColour": "#4F4A42"
+  },
+  {
+    "Name": "Lozère",
+    "StatesMapColour": "#5B51B2"
+  },
+  {
+    "Name": "Tarn",
+    "StatesMapColour": "#FADEBE"
+  },
+  {
+    "Name": "Aveyron",
+    "StatesMapColour": "#EEEEEE"
+  }
+]
