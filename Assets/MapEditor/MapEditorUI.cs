@@ -36,14 +36,4 @@ public class MapEditorUI : MonoBehaviour
         HoveringOverCountryText.text = $"Current country:\n{MapParent.mapUtils.GetCountryAtCoords(MapParent.mapUtils.GetCoordsAtMouse())}";
         NumberOfCountriesText.text = $"Number of countries: {MapParent.mapState.Countries.Count}";
     }
-
-    public void OnSaveDataButtonClick()
-    {
-        // MapParent.mapEditorCore.SaveDataToFile();
-    }
-
-    public void OnLoadDataButtonClick()
-    {
-        // MapParent.mapEditorCore.LoadDataFromFile();
-    }
 }

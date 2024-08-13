@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MapParent : MonoBehaviour
 {
-    // Game
     public static MapState mapState { get; private set; }
     public static MapCreator mapCreator { get; private set; }
     public static MapUtils mapUtils { get; private set; }
@@ -20,7 +19,7 @@ public class MapParent : MonoBehaviour
         mapUtils = transform.Find("MapUtils").GetComponent<MapUtils>();
         mapLoader = transform.Find("MapLoader").GetComponent<MapLoader>();
 
-        // // if in map editor
+        // if in map editor
         if (SceneManager.GetActiveScene().name == "MapEditor")
         {
             mapEditorCore = GameObject.Find("MapEditorCore").GetComponent<MapEditorCore>();

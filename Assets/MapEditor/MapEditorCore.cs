@@ -11,12 +11,10 @@ public class MapEditorCore : MonoBehaviour
     }
 
     private Vector2Int mouseCoords;
-    private bool isMouseOverLand = false;
 
     void Update()
     {
         mouseCoords = MapParent.mapUtils.GetCoordsAtMouse();
-        isMouseOverLand = MapParent.mapUtils.AreCoordsOnLand(mouseCoords);
         
         // selecting states only works in views other than tiles view
         if (MapParent.mapState.CurrentMapView != MapState.MapView.Tiles)
