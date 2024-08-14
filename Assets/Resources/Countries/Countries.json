@@ -3,12 +3,14 @@
     "Tag": "BRITAIN",
     "Name": "United Kingdom",
     "LongName": "United Kingdom of Great Britain and Ireland",
-    "Colour": "#FF3F3F"
+    "Colour": "#FF3F3F",
+    "Stability": 0.8
   },
   {
     "Tag": "FRANCE",
     "Name": "France",
     "LongName": "French Republic",
-    "Colour": "#3F3FFF"
+    "Colour": "#3F3FFF",
+    "Stability": 0.6
   }
 ]

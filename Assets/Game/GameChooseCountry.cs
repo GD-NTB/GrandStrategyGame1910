@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameChooseCountry : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class GameChooseCountry : MonoBehaviour
     public void StartChoosingCountry()
     {
         GameParent.gameState.IsChoosingCountry = true;
+        GameParent.gameState.PlayerCountry = null;
 
         // ui
         
@@ -40,8 +42,8 @@ public class GameChooseCountry : MonoBehaviour
     private void UpdateChoosingCountry()
     {
         // on country click
-        if (GameParent.gameCore.IsMouseOnLand && Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetMouseButtonDown(0) && GameParent.gameCore.IsMouseOnLand && !EventSystem.current.IsPointerOverGameObject()) // prevent click through ui
+        {            
             Country country = MapParent.mapUtils.GetCountryAtCoords(MapParent.mapUtils.GetCoordsAtMouse(), true);
             ChooseCountry(country);
         }

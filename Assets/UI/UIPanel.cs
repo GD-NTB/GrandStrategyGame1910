@@ -10,7 +10,7 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
         // linear search every ui panel
         foreach (UIPanel uiPanel in AllUIPanels)
         {
-            if (uiPanel.name == name)
+            if (uiPanel.Name == name)
             {
                 return uiPanel;
             }
@@ -21,11 +21,11 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
     public GameObject FindElementByName(string name)
     {
         // linear search every ui panel
-        foreach (GameObject element in Elements)
+        foreach (Transform element in transform)
         {
             if (element.name == name)
             {
-                return element;
+                return element.gameObject;
             }
         }
         Debug.LogWarning($"unable to find ui element '{name}'");
@@ -45,18 +45,14 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
     public float SortOrder;  // the sort order of this ui panel
     public bool StartOpen;  // if the panel is open and elements are active on start
 
-    public List<GameObject> Elements; // elements inside the panel
-
     [ReadOnly] public bool IsOpen; // { get; private set; }
 
-    public UIPanel(string name, float sortOrder, bool startOpen, List<GameObject> elements)
-    {
-        Name = name;
-        SortOrder = sortOrder;
-        StartOpen = startOpen;
-
-        Elements = elements; // todo: UIElement class so this can be serialised
-    }
+    // public UIPanel(string name, float sortOrder, bool startOpen, List<GameObject> elements)
+    // {
+    //     Name = name;
+    //     SortOrder = sortOrder;
+    //     StartOpen = startOpen;
+    // }
 
 
 
@@ -64,15 +60,6 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
     {
         // add to all static list of all ui panels
         AllUIPanels.Add(this);
-
-        // add every child to elements list if needed
-        if (Elements.Count == 0)
-        {
-            foreach (Transform child in transform)
-            {
-                Elements.Add(child.gameObject);
-            }
-        }
         
         // start open logic
         if (StartOpen) { OnOpen(false); }
@@ -89,9 +76,9 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
 
     public void OnOpen(bool doTransition=true)
     {
-        foreach (GameObject element in Elements)
+        foreach (Transform element in transform)
         {
-            element.SetActive(true);
+            element.gameObject.SetActive(true);
         }
 
         if (doTransition)
@@ -108,9 +95,9 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
 
     public void OnClose(bool doTransition=true)
     {
-        foreach (GameObject element in Elements)
+        foreach (Transform element in transform)
         {
-            element.SetActive(false);
+            element.gameObject.SetActive(false);
         }
 
         if (doTransition)

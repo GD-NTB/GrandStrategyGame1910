@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MapEditorCore : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class MapEditorCore : MonoBehaviour
         if (MapParent.mapState.CurrentMapView != MapState.MapView.Tiles)
         {
             // select hovered over state on mouse 0
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // prevent click through ui
             {
                 SelectState(MapParent.mapUtils.GetStateAtCoords(mouseCoords));
             }
