@@ -32,17 +32,22 @@ public class BasePanelUI : MonoBehaviour
         MiscRegionPanel = UIPanel.FindByName("MiscRegionPanel");
     }
 
-    // todo: make ui update on its own independent rate instead of using fixed update
-    void FixedUpdate()
+    // todo: make ui update on its own independent rate instead of using update, we can have some global caller for this from another script
+    void Update()
     {
         OnUIUpdate();
     }
 
     public void OnUIUpdate()
     {
-        if (!BasePanel.IsOpen) { return; } // dont do anything if the panel is not open
+        if (BasePanel.IsOpen) { UpdateDiplomacyRegionUI(); } // dont do anything if the panel is not open
+        // ...
+    }
 
-        // ------------------------------ DIPLOMACY ------------------------------
+
+
+    public void UpdateDiplomacyRegionUI()
+    {
         CountryNameText.text = GameParent.gameState.PlayerCountry.Name;
         StabilityPercentText.text = GameParent.gameState.PlayerCountry.StabilityPercent();
     }

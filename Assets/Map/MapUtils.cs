@@ -195,7 +195,7 @@ public class MapUtils : MonoBehaviour
         if (log) { print($"redrew tile ({tile.x}, {tile.y})"); }
     }
 
-    public void RedrawState(State state)
+    public void RedrawState(State state, bool log=true)
     {
         // todo: see if there is a way to set multiple tiles at once
         foreach (int tileID in state.TilesID)
@@ -203,13 +203,14 @@ public class MapUtils : MonoBehaviour
             RedrawTile(MapParent.mapState.TileIDToTile[tileID], false);
         }
 
-        print($"redrew state ({state.ID}, {state.Name})"); 
+        if (log) { print($"redrew state ({state.ID}, {state.Name})"); }
     }
 
-    public void RedrawMap()
+    public void RedrawMap(bool log=true)
     {
         // ------------------------------------------------------------
-        float startTime = Time.realtimeSinceStartup;
+        float startTime = 0.0f;
+        if (log) {  startTime = Time.realtimeSinceStartup; }
         // ------------------------------------------------------------
 
         foreach (GameTile tile in MapParent.mapState.Tiles)
@@ -218,8 +219,11 @@ public class MapUtils : MonoBehaviour
         }
 
         // ------------------------------------------------------------
-        float endTime = Time.realtimeSinceStartup; // for benchmarking
+        if (log)
+        {
+            float endTime = Time.realtimeSinceStartup; // for benchmarking
             print($"took {endTime - startTime} seconds to redraw map");
+        }
         // ------------------------------------------------------------
     }
 

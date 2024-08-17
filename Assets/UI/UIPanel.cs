@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsOpen, ELSE ITS A WASTE!!!! 
 {
@@ -42,17 +44,9 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
 
 
     public string Name; // name of this ui panel
-    public float SortOrder;  // the sort order of this ui panel
     public bool StartOpen;  // if the panel is open and elements are active on start
 
     [ReadOnly] public bool IsOpen; // { get; private set; }
-
-    // public UIPanel(string name, float sortOrder, bool startOpen, List<GameObject> elements)
-    // {
-    //     Name = name;
-    //     SortOrder = sortOrder;
-    //     StartOpen = startOpen;
-    // }
 
 
 
@@ -61,29 +55,27 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
         // add to all static list of all ui panels
         AllUIPanels.Add(this);
         
-        // start open logic
-        if (StartOpen) { OnOpen(false); }
-        else { OnClose(false); }
-    }
-
-    void Update()
-    {
-        // set sorting order
-        gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, SortOrder);
+        // start open logic is handled by UIPanelSetup
+        
+        print($"{Name} setup");
     }
 
 
 
     public void OnOpen(bool doTransition=true)
     {
-        foreach (Transform element in transform)
+        foreach (Transform child in transform)
         {
-            element.gameObject.SetActive(true);
+            if (child.TryGetComponent<CanvasRenderer>(out CanvasRenderer renderer))
+            {
+                renderer.SetAlpha(1);
+            }
         }
 
         if (doTransition)
         {
             // todo: do transition and stuff here
+            print($"opened panel {Name}");
         }
 
         // also do sound here
@@ -95,16 +87,33 @@ public class UIPanel : MonoBehaviour // REMEMBER, ONLY UPDATE UI ELEMENTS IF IsO
 
     public void OnClose(bool doTransition=true)
     {
-        foreach (Transform element in transform)
+        foreach (Transform child in transform)
         {
-            element.gameObject.SetActive(false);
+            if (child.TryGetComponent<CanvasRenderer>(out CanvasRenderer renderer))
+            {
+                renderer.SetAlpha(0);
+            }
         }
 
         if (doTransition)
         {
             // todo: do transition and stuff here
+            print($"closed panel {Name}");
         }
 
         IsOpen = false;
+    }
+
+    // i dont have to wake up
+    // i dont have to be here
+    // you dont have to love me
+    // i dont need a godsend
+    // just love it when its bright out
+    // the sunrise is calling
+    // i feel at peace
+    // i could believe
+    public void OnCloseButton()
+    {
+        GameParent.gameCore.DeselectState();
     }
 }

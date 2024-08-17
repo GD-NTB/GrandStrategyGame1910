@@ -12,6 +12,11 @@ public class CameraBehaviour : MonoBehaviour
     public float ZoomMinMultiplier;
     public float ZoomMaxMultiplier;
 
+    public Vector2 CameraBounds_X;
+    public Vector2 CameraBounds_Y;
+
+    public bool DrawDebug = false;
+
     void Start()
     {
         cam = Camera.main;
@@ -23,7 +28,8 @@ public class CameraBehaviour : MonoBehaviour
     {
         DoPan();
         DoZoom();
-
+        DoCameraBounds();
+        
         mousePositionLastFrame = Input.mousePosition;
     }
 
@@ -62,5 +68,27 @@ public class CameraBehaviour : MonoBehaviour
 
         // clamp min and max
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, ZoomMin, ZoomMax);
+    }
+
+    private void DoCameraBounds()
+    {
+        float yFOV = cam.orthographicSize;
+        float xFOV = yFOV * cam.aspect;
+
+        transform.position = new Vector3(x: Mathf.Clamp(transform.position.x, CameraBounds_X.x+xFOV, CameraBounds_X.y-xFOV),
+                                         y: Mathf.Clamp(transform.position.y, CameraBounds_Y.x+yFOV, CameraBounds_Y.y-yFOV),
+                                         z: transform.position.z);
+        
+        if (DrawDebug)
+        {
+            Debug.DrawLine(start: new Vector3(CameraBounds_X.x, CameraBounds_Y.x), // top
+                             end: new Vector3(CameraBounds_X.y, CameraBounds_Y.x), Color.red);
+            Debug.DrawLine(start: new Vector3(CameraBounds_X.x, CameraBounds_Y.y), // bottom
+                             end: new Vector3(CameraBounds_X.y, CameraBounds_Y.y), Color.red);
+            Debug.DrawLine(start: new Vector3(CameraBounds_X.x, CameraBounds_Y.x), // left
+                             end: new Vector3(CameraBounds_X.x, CameraBounds_Y.y), Color.red);
+            Debug.DrawLine(start: new Vector3(CameraBounds_X.y, CameraBounds_Y.x), // right
+                             end: new Vector3(CameraBounds_X.y, CameraBounds_Y.y), Color.red);
+        }
     }
 }

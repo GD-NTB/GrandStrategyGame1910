@@ -10,7 +10,7 @@ public class Country
     public string LongName { get; set; } // long form of the country's name displayed in game
     [JsonConverter(typeof(ColorHandler))] public Color Colour { get; set; } // the colour of the country in-game and in related map files
 
-    public float Stability { get; set; } // stability of the country, todo: split this into 4 or 5 or 6 or smthn
+    public float Stability { get; set; } // stability of the country, todo: split this into 4 or 5 or 6 or whatever the plan is
     public string StabilityPercent()
     {
         return $"{Math.Round(Stability * 100.0f, 1)}%";

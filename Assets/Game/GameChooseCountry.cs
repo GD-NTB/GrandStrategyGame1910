@@ -51,11 +51,12 @@ public class GameChooseCountry : MonoBehaviour
 
     private void ChooseCountry(Country country)
     {
-        GameParent.gameState.IsChoosingCountry = false;
-        GameParent.gameState.PlayerCountry = country;
-
         choosingCountryPanel.OnClose(false);
         UIPanel.FindByName("BasePanel").OnOpen(false);
+
+        // do this after ui to not fuck up timings
+        GameParent.gameState.IsChoosingCountry = false;
+        GameParent.gameState.PlayerCountry = country;
 
         print($"selected country {country.Name}");
     }

@@ -7,4 +7,9 @@ public class GameState : MonoBehaviour
 
     // ---------------------------------------------------- COUNTRY ----------------------------------------------------
     public Country PlayerCountry;
+
+    // ---------------------------------------------------- MAP CONTROL ----------------------------------------------------
+    public GameTile SelectedTile;
+    public State SelectedState;
+    public Country SelectedCountry;
 }
