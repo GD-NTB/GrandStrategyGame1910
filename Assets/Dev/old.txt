@@ -1,0 +1,137 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class StateOutlineCreator : MonoBehaviour
+{
+    private LineRenderer lineRenderer;
+    void Awake()
+    {
+        // lineRenderer = GetComponent<LineRenderer>();
+    }
+
+    public void CreateAllStateOutlines()
+    {
+        // todo: foreach state
+        // CreateStateOutlineMesh(MapParent.mapState.StateIDToState[144]);
+    }
+
+    // todo: some states have missing names lol fdsfds
+    public void CreateStateOutlineMesh(State state, float thickness=0.25f)
+    {
+        // 1 - find vertices of each tile
+        List<List<Vector3>> tileVertices = new List<List<Vector3>>();
+        foreach (int tileID in state.TilesID)
+        {
+            GameTile tile = MapParent.mapState.TileIDToTile[tileID];
+            tileVertices.Add(new List<Vector3> { new Vector3(tile.x - 0.5f, tile.y + 0.5f),
+                                                 new Vector3(tile.x + 0.5f, tile.y + 0.5f),
+                                                 new Vector3(tile.x - 0.5f, tile.y - 0.5f),
+                                                 new Vector3(tile.x + 0.5f, tile.y - 0.5f) });
+        }
+        
+        // 2 - compute edges (https://stackoverflow.com/a/73233163)
+        HashSet<KeyValuePair<Vector3, Vector3>> edges = new HashSet<KeyValuePair<Vector3, Vector3>>();
+        foreach (List<Vector3> square in tileVertices)
+        {
+            // Iterate over the coordinates to compute the edges
+            // Using for loop to skip already processed edges
+            int squareCount = square.Count;
+            for (int i = 0; i < squareCount; i++)
+            {
+                // The source vertex
+                Vector3 src = square[i];
+
+                for (int j = 0; j < squareCount; j++)
+                {
+                    if (i == j) continue;
+                    // The vertex with whom we want to determine if they form and edge
+                    Vector3 dest = square[j];
+
+                    // Check the distance between them to filter out the diagonal edges
+                    if (!(Mathf.Abs(Vector3.Distance(src, dest) - 1.0f) < 0.001)) { continue; }
+
+                    KeyValuePair<Vector3, Vector3> edge = new KeyValuePair<Vector3, Vector3>(src, dest);
+
+                    // _edges is a set, making it viable to use Contains
+                    // even when the collections contains a lot of elements
+                    if (edges.Contains(edge))
+                    {
+                        // If the edge already exists in the set,
+                        // it means its not part of the border
+                        edges.Remove(edge);
+                    }
+                    else
+                    {
+                        edges.Add(edge);
+                    }
+                }
+            }
+        }
+
+        // 3 - reorder vertices
+        List<Vector3> finalVertices = new List<Vector3>();
+
+        // Make a copy of the edges so we can remove items from it
+        // without destroying the original collection
+        HashSet<KeyValuePair<Vector3, Vector3>> copy = new HashSet<KeyValuePair<Vector3, Vector3>>(edges);
+
+        // Add the first pair before starting the loop
+        KeyValuePair<Vector3, Vector3> previousEdge = edges.First();
+
+        finalVertices.Add(previousEdge.Key);
+        finalVertices.Add(previousEdge.Value);
+
+        KeyValuePair<Vector3, Vector3> currentEdge;
+
+        // While there is an edge that follows the previous one
+        while (!(currentEdge = copy.FirstOrDefault(pair => pair.Key == previousEdge.Value))
+                .Equals(default(KeyValuePair<Vector3, Vector3>)))
+        {
+            // Our graph is not oriented but we want to ignores edges
+            // that go back from where we went
+            if (currentEdge.GetHashCode() == previousEdge.GetHashCode())
+            {
+                copy.Remove(currentEdge);
+                continue;
+            }
+
+            // Add the vertex to the list and continue
+            finalVertices.Add(currentEdge.Value);
+            previousEdge = currentEdge;
+
+            // Remove traversed nodes
+            copy.Remove(currentEdge);
+        }
+
+        // 4 - convert vertices to world pos
+        List<Vector3> wVertices = new List<Vector3>();
+        foreach (Vector3 vertex in finalVertices)
+        {
+            wVertices.Add(MapUtils.CoordToWorld(vertex));
+        }
+
+        // 5 - remove duplicates
+        wVertices = wVertices.Distinct().ToList(); 
+
+        // test
+        // GameObject vertexMarker = Resources.Load("DebugSquare") as GameObject;
+        // for (int i = 0; i < wVertices.Count; i++)
+        // {
+        //     Vector2 vertex = wVertices[i];
+        //     GameObject vertexGameObject = Instantiate(vertexMarker);
+        //     vertexGameObject.transform.position = (Vector3)vertex + new Vector3(0.0f, 0.0f, -0.3f);
+        //     vertexGameObject.name = $"({i}: {vertex.x}, {vertex.y})";
+        // }
+
+        // 6 - use LineRenderer to draw outline
+        int numOfVertices = wVertices.Count;
+        lineRenderer.positionCount = numOfVertices;
+        for (int i = 0; i < numOfVertices; i++)
+        {
+            lineRenderer.SetPosition(i, wVertices[i]);
+        }
+
+        print($"created state outline mesh of {state.Name}");
+    }
+}

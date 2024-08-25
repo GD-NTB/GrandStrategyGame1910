@@ -4,16 +4,26 @@ public class CameraBehaviour : MonoBehaviour
 {
     private Camera cam;
 
-    private Vector3 mousePositionLastFrame;
-
     public bool DrawDebug = false;
+        
+    [Header("Panning")]
+    [ReadOnly] public Vector3 panVelocity;
+    public float PanOutVelocity;
+    public float PanInVelocity;
+    public float PanFriction;
+    public float PanZeroThreshold;
 
+    private Vector3 mousePositionLastFrame;
+    
     [Header("Zooming")]
+    [ReadOnly] public float zoomVelocity;
     [ReadOnly] public float currentZoomMultiplier;
     public float ZoomMin;
     public float ZoomMax;
     public float ZoomMinMultiplier;
     public float ZoomMaxMultiplier;
+    public float ZoomFriction;
+    public float ZoomZeroThreshold;
     
     [Header("Camera Bounds")]
     public Vector2 CameraBounds_X;
@@ -47,22 +57,31 @@ public class CameraBehaviour : MonoBehaviour
 
     private void DoPan()
     {
-        // fixes camera flying when mouse is offscreen and comes back (because mouse pos isn't updated when unfocused)
+       // fixes camera flying when mouse is offscreen and comes back (because mouse pos isn't updated offscreen)
         if (Input.GetMouseButtonDown(2)) { mousePositionLastFrame = Input.mousePosition; }
 
-        // we use world space so that the mouse stays "at the same point" when dragging
-        Vector3 worldMousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 worldMousePositionLastFrame = cam.ScreenToWorldPoint(mousePositionLastFrame);
-        // based on mouse delta
-        Vector3 panning = new Vector3(worldMousePositionLastFrame.x - worldMousePosition.x,
-                                       worldMousePositionLastFrame.y - worldMousePosition.y,
-                                       0.0f);
-        
-        // move camera if button pressed
+        // calculate pan multiplier based on linear interpolation of max and min zoom and velocity
+        float panMultiplier = (PanOutVelocity - PanInVelocity)/(ZoomMax - ZoomMin) * (cam.orthographicSize - ZoomMin) + PanInVelocity;
+
         if (Input.GetMouseButton(2))
         {
-            transform.Translate(panning);
+            // we use ScreenToViewportPoint to use screen coordinates instead, therefore not using pixels and making panning resolution independent
+            Vector3 mouseDelta = cam.ScreenToViewportPoint(Input.mousePosition) - cam.ScreenToViewportPoint(mousePositionLastFrame);
+            
+            panVelocity += new Vector3(
+                mouseDelta.x,
+                mouseDelta.y,
+                0.0f) * panMultiplier * Time.deltaTime;
         }
+
+        // snap to 0 velocity when threshold is met
+        if (Mathf.Abs(panVelocity.magnitude) < PanZeroThreshold) { panVelocity = Vector3.zero; }
+
+        // apply pan to camera
+        cam.transform.position -= panVelocity;
+
+        // apply friction
+        panVelocity *= 1 - PanFriction * Time.deltaTime;
     }
 
     private void DoZoom()
@@ -73,10 +92,20 @@ public class CameraBehaviour : MonoBehaviour
         // lerp between zoom speeds based on how zoomed in we are
         currentZoomMultiplier = Mathf.Lerp(ZoomMinMultiplier, ZoomMaxMultiplier, zoomProgress);
 
-        // calculate amount to zoom by
-        float zooming = Input.mouseScrollDelta.y * currentZoomMultiplier;
-        // do the zoom
-        cam.orthographicSize -= zooming;
+        // calculate zoom velocity
+        zoomVelocity += Input.mouseScrollDelta.y * currentZoomMultiplier;
+
+        // snap to 0 velocity when threshold is met
+        if (Mathf.Abs(zoomVelocity) < ZoomZeroThreshold) { zoomVelocity = 0.0f; }
+
+        if (zoomVelocity != 0.0f)
+        {
+            // apply zoom to camera
+            cam.orthographicSize -= zoomVelocity * Time.deltaTime;
+        }
+
+        // apply friction
+        zoomVelocity *= 1 - ZoomFriction * Time.deltaTime;
 
         // clamp min and max
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, ZoomMin, ZoomMax);

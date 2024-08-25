@@ -1,0 +1,32 @@
+for every state:
+	edgePixels = list(vector2int)
+	loop through every pixel in state:
+		isEdge = false
+		// up
+		if pixel up is different colour:
+			isEdge = true
+			add different pixel
+		// down
+		if pixel down is different colour:
+			isEdge = true
+			add different pixel
+		// left
+		if pixel left is different colour:
+			isEdge = true
+			add different pixel
+		// right
+		if pixel right is different colour:
+			isEdge = true
+			add different pixel
+
+		if isEdge:
+			add to edgePixels
+	
+	wallPixels = list(vector2)
+	loop every edgePixel:
+		look at right, bottom-right, bottom pixels
+		if 2 or more are edgePixels:
+			add center of this 2x2 square (x+0.5, y-0.5) to wallPixels
+	
+	for every wallPixel:
+		create quad there

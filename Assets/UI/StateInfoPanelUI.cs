@@ -36,7 +36,7 @@ public class StateInfoPanelUI : MonoBehaviour
         StateOccupierNameText.text = $"Occupied by {GameParent.gameState.SelectedCountry.Name}";
 
         // OccupierText
-        OccupierText.text = $"State of {GameParent.gameState.SelectedCountry.Name}";
+        OccupierText.text = GameParent.gameState.SelectedCountry.Name;
 
         // TilesText
         TilesText.text = $"Tiles: {GameParent.gameState.SelectedState.TilesID.Length}";

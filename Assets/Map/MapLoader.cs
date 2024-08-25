@@ -20,7 +20,7 @@ public class MapLoader : MonoBehaviour
         LoadCountryData();
         LoadOccupationData();
         // MapParent.mapUtils.RedrawMap();
-
+        
         // ------------------------------------------------------------
         float endTime = Time.realtimeSinceStartup; // for benchmarking
         print($"took {endTime - startTime} seconds to create everything");

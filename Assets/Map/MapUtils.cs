@@ -4,14 +4,14 @@ public class MapUtils : MonoBehaviour
 {
     public static Vector2 CoordToWorld(Vector2 coord)
     {
-        return new Vector2((coord.x - 2500.0f)*0.01f-0.005f,
-                           (coord.y - 1250.0f)*0.01f-0.005f);
+        return new Vector2((coord.x - 2500.0f)*0.01f+0.005f,
+                           (coord.y - 1250.0f)*0.01f+0.005f);
     }
 
     public static Vector2Int WorldToCoord(Vector2 world)
     {
         Vector2 pos = new Vector2(world.x + 25.0f,
-                                        world.y + 12.5f) * 100.0f;
+                                  world.y + 12.5f) * 100.0f;
         return new Vector2Int(Mathf.FloorToInt(pos.x),
                               Mathf.FloorToInt(pos.y));
         }

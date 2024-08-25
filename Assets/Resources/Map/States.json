@@ -48,7 +48,8 @@
     "StatesMapColour": "#A78F84"
   },
   {
-      "StatesMapColour": "#C0C3BB"
+    "Name": "Middlesex",
+    "StatesMapColour": "#C0C3BB"
   },
   {
     "Name": "Essex",
@@ -99,7 +100,8 @@
     "StatesMapColour": "#B4F6FC"
   },
   {
-      "StatesMapColour": "#694C49"
+    "Name": "Cambridgeshire",
+    "StatesMapColour": "#694C49"
   },
   {
     "Name": "Norfolk",
@@ -250,7 +252,8 @@
     "StatesMapColour": "#442F4B"
   },
   {
-      "StatesMapColour": "#402C18"
+    "Name": "Midlothian",
+    "StatesMapColour": "#402C18"
   },
   {
     "Name": "Renfrewshire",
